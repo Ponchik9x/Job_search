@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from src.interactions_with_vacancies import Vacancy
+
 
 class BaseHeadHunterAPI(ABC):
 
@@ -18,11 +20,11 @@ class BaseAddingVacancies(ABC):
     """Абстрактный класс для добавления/получения/уделения вакансий в файле"""
 
     @abstractmethod
-    def add_vacancy(self, user_vacancy):
+    def get_data_vacancies(self):
         pass
 
     @abstractmethod
-    def save_in_file(self, **value):
+    def add_vacancy(self, value: list[Vacancy]):
         pass
 
     @abstractmethod
